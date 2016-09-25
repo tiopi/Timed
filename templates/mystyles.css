@@ -1,0 +1,17 @@
+h1 {
+    z-index: 100;
+    position: absolute;
+    color: LightCoral;
+    font-family: "Avenir Next";
+    font-size: 60px;
+    font-weight: 500;
+
+}
+p {
+    z-index: 100;
+    position: absolute;
+    color: Sienna;
+    font-family: "Avenir Next";
+    font-size: 30px;
+    font-weight: 300;
+}
