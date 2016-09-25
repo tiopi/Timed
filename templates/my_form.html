@@ -75,8 +75,14 @@ input {
                     <input type="submit" name="my-form" value="Enter" class="button button1"></p>
                 </form>
             </div>
+            <div class="flashes">
+  {% for message in get_flashed_messages() %}
+    {{ message }}
+  {% endfor %}
+    </div>
         </div>
     </div>
+    
     <div>
     <img id = "image" src="http://logok.org/wp-content/uploads/2014/02/Delta-logo-1024x768.png">
     </div>

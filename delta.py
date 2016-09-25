@@ -1,6 +1,7 @@
-from flask import Flask
+from flask import Flask, flash
 from flask import request
 from flask import render_template
+from flask import Markup
 import requests, json, re
 from collections import defaultdict
 import numpy as np
@@ -8,6 +9,7 @@ import numpy as np
 #% matplotlib inline
 
 app = Flask(__name__)
+app.secret_key = "Ya this is the key"
 
 @app.route('/')
 def my_form():
@@ -18,9 +20,8 @@ def my_form_post():
 
     text = request.form['text']
     time = request.form['time']
-    processed_text = text.upper()
     
-    airport = text
+    airport = text.upper()
     j = requests.get('https://demo30-test.apigee.net/v1/hack/tsa?airport='+ airport+'&apikey=wc7Tmyx7JGCAMPiPtrE01U8LAzSJXTb7')
     mjason = json.loads(j.text)
     
@@ -45,7 +46,10 @@ def my_form_post():
     fit_fn = np.poly1d(fit)
     
     time = float(time)
-    return str(fit_fn(time/float(24)))
+    message = Markup("<h3>It takes "+str(int(fit_fn(time/float(24))))+" minutes to get through TSA</h3>")
+    flash(message)
+    return render_template('my_form.html')
+    #return
 
 if __name__ == '__main__':
     app.debug = True
