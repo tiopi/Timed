@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <body>
-    <h1>Enter your airport code</h1>
-    <h2>(it will be converted to uppercase)</h2>
-    <form action="." method="POST">
-        <input type="text" name="text" value="ATL">
-        <input type="number" name="time" value = "10">
-        <input type="submit" name="my-form" value="Send">
-    </form>
+    <div class="container-fluid row-0">
+        <div class="col-md-6">
+            <img src="pexels-photo.jpg" id="logo" style="max-width:100%;">
+            <h1>Enter your airport code</h1></img>
+        </div>
+    </div>
+    
+    <div class="container-fluid row-5">
+      <div class="col-md-4 col-md-offset-4">
+            <h1 class="big">Find out now</h1>
+            <div class="subtledark">
+                <form action="." method="POST">
+                   Airport: <input type="text" name="text" placeholder="ATL">
+                    Time (24 hour): <input type="number" name="time" placeholder= "10">
+                    <input type="submit" name="my-form" value="Enter">
+                </form>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>
