@@ -27,9 +27,10 @@ p {
     padding-left: 600px;
 }
 #image {
-  position: absolute;
-  left: 0;
-  top: 0;
+  max-width: 200px;
+    position: absolute;
+    bottom: 0;
+    right: 20px;
 }
 .button1 {
     
@@ -42,12 +43,12 @@ p {
     cursor: pointer;
 }
 body {
-    background-size: 1300px 900px;
+    background-size: 100%;
     background-repeat: no-repeat;
     padding-top: 20px;
     padding-right: 20px;
     padding-left: 20px;
-    background-position: center; 
+    background-position: 0px -90px;
 }
 input {
     width: 50%;
@@ -66,15 +67,18 @@ input {
     
     <div class="w3-container w3-animate-opacity">
       <div>
-            <h3>Find out your waiting time</h3>
+            <h3>Find out your TSA waiting time</h3>
             <div>
                 <form action="." method="POST">
-                   <p>Airport: <input class= "w3-center" type="text" name="text" placeholder="ATL">
-                    <p>Time (24 hour): <input class="w3-center" type="number" name="time" placeholder= "10" min="0" max="23">
+                   <p>Airport Code: <input class= "w3-center" type="text" name="text" placeholder="ATL">
+                    <p>Entering Time (24 hour): <input class="w3-center" type="number" name="time" placeholder= "10" min="0" max="23">
                     <input type="submit" name="my-form" value="Enter" class="button button1"></p>
                 </form>
             </div>
         </div>
+    </div>
+    <div>
+    <img id = "image" src="http://logok.org/wp-content/uploads/2014/02/Delta-logo-1024x768.png">
     </div>
 
 </body>
